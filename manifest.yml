@@ -1,9 +1,6 @@
----
-language: binary
 default_versions: []
-dependency_deprecation_dates: []
 dependencies: []
-pre_package: scripts/build.sh
+dependency_deprecation_dates: []
 include_files:
 - CHANGELOG
 - CONTRIBUTING.md
@@ -22,3 +19,5 @@ include_files:
 - bin/release.bat
 - bin/supply
 - manifest.yml
+language: binary
+pre_package: scripts/build.sh
