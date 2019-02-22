@@ -24,7 +24,7 @@ var _ = Describe("running supply buildpacks before the binary buildpack", func()
 	Context("the app is pushed once", func() {
 		BeforeEach(func() {
 			if !strings.HasPrefix(os.Getenv("CF_STACK"), "cflinuxfs") {
-				Skip(fmt.Sprintf("Skipping because the current stack %s is not supported", os.Getenv("CF_STACK")))
+				fmt.Sprintf("Current stack %s is not cflinuxfs", os.Getenv("CF_STACK"))
 			}
 
 			if version, err := cutlass.ApiVersion(); err != nil || version == "2.65.0" {
@@ -33,7 +33,7 @@ var _ = Describe("running supply buildpacks before the binary buildpack", func()
 
 			app = cutlass.New(filepath.Join(bpDir, "fixtures", "fake_supply_binary_app"))
 			app.Buildpacks = []string{
-				"https://github.com/cloudfoundry/dotnet-core-buildpack#develop",
+				"https://github.com/suse/cf-dotnet-core-buildpack#master",
 				"binary_buildpack",
 			}
 			app.Disk = "1G"
