@@ -85,7 +85,7 @@ func SkipIfNotWindows() {
 }
 
 func SkipIfNotLinux() {
-	if !canRunForOneOfStacks("cflinuxfs3") {
+	if !canRunForOneOfStacks("cflinuxfs3", "sle15") {
 		Skip("Skipping Linux tests")
 	}
 }
