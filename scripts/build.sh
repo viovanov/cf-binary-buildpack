@@ -6,6 +6,3 @@ source .envrc
 
 GOOS=linux   go build -mod=vendor -ldflags="-s -w" -o bin/supply ./src/binary/supply/cli
 GOOS=linux   go build -mod=vendor -ldflags="-s -w" -o bin/finalize ./src/binary/finalize/cli
-
-GOOS=windows go build -mod=vendor -ldflags="-s -w" -o bin/supply.exe ./src/binary/supply/cli
-GOOS=windows go build -mod=vendor -ldflags="-s -w" -o bin/finalize.exe ./src/binary/finalize/cli
